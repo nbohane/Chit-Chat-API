@@ -28,18 +28,6 @@ public class PostLikeController {
 		return postLikeRepository.save(postLike);
 	}
 
-	// Read by Post ID
-	@GetMapping(path = "/post")
-	public @ResponseBody Iterable<PostLike> getPostLikesByPostId(@RequestParam int id) {
-		return postLikeRepository.findByPostId(id);
-	}
-
-	// Read by User ID
-	@GetMapping(path = "/user")
-	public @ResponseBody Iterable<PostLike> getPostLikesByUserId(@RequestParam int id) {
-		return postLikeRepository.findByUserId(id);
-	}
-
 	// Delete
 	@DeleteMapping(path = "")
 	public @ResponseBody String deletePostLike(@RequestParam int id) throws Exception {

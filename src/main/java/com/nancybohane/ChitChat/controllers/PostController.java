@@ -34,6 +34,12 @@ public class PostController {
 	public @ResponseBody Post getPostById(@RequestParam int id) {
 		return postRepository.findById(id).get();
 	}
+	
+	//Get all Posts in Feed
+	@GetMapping(path = "/feed")
+	public @ResponseBody Iterable<Post> getAllPostsInFeed(@RequestParam int id) {
+		return postRepository.findAll();
+	}
 
 	// Update
 	@PutMapping(path = "")

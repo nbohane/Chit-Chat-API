@@ -28,17 +28,6 @@ public class MemberController {
 		return memberRepository.save(member);
 	}
 
-	// Read by User ID
-	@GetMapping(path = "/user")
-	public @ResponseBody Iterable<Member> getMemberByUserId(@RequestParam int id) {
-		return memberRepository.findByUserId(id);
-	}
-
-	// Read by Group ID
-	@GetMapping(path = "/group")
-	public @ResponseBody Iterable<Member> getMemberByGroupId(@RequestParam int id) {
-		return memberRepository.findByGroupId(id);
-	}
 
 	// Update
 	@PutMapping(path = "")

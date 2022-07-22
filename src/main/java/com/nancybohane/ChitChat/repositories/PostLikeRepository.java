@@ -6,8 +6,5 @@ import com.nancybohane.ChitChat.models.PostLike;
 
 public interface PostLikeRepository extends CrudRepository<PostLike, Integer> {
 
-	Iterable<PostLike> findByPostId(int postId);
-
-	Iterable<PostLike> findByUserId(int userId);
 
 }

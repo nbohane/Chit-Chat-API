@@ -28,11 +28,6 @@ public class CommentLikeController {
 		return commentLikeRepository.save(commentlike);
 	}
 
-	// Read by Comment ID
-	@GetMapping(path = "")
-	public @ResponseBody Iterable<CommentLike> getCommentLikeById(@RequestParam int id) {
-		return commentLikeRepository.findByCommentId(id);
-	}
 
 	// Delete
 	@DeleteMapping(path = "")

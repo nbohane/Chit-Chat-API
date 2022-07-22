@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.nancybohane.ChitChat.models.Group;
+import com.nancybohane.ChitChat.models.Member;
 import com.nancybohane.ChitChat.repositories.GroupRepository;
 
 @Controller
@@ -58,4 +59,9 @@ public class GroupController {
 		}
 		throw new Exception("Could not delete group id#" + id);
 	}
+	// Read by User ID
+		@GetMapping(path = "/user")
+		public @ResponseBody Iterable<Group> getGroupsByUserId(@RequestParam int id) {
+			return groupRepository.findByUserId(id);
+		}
 }
